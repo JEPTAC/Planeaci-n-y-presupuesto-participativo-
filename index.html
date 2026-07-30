@@ -1,267 +1,617 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Porcentaje del presupuesto destinado al proceso de participación ciudadana de San Pedro, Valle del Cauca, vigencia 2026.">
-<title>Presupuesto para participación ciudadana 2026 | San Pedro</title>
-<style>
-  :root{
-    --azul:#0b3d66;--azul2:#17679d;--verde:#2e7d52;--dorado:#d6a62d;
-    --texto:#243746;--muted:#637483;--fondo:#eef4f8;--blanco:#fff;
-    --borde:#d4e0e8;--suave:#f6f9fb;--rojo:#a93636;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--fondo);color:var(--texto);font-family:"Century Gothic",Arial,sans-serif;line-height:1.55}
-  button{font:inherit}
-  .wrap{width:min(1120px,calc(100% - 28px));margin:24px auto 40px}
-  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;border-radius:22px;padding:34px;box-shadow:0 18px 42px rgba(11,61,102,.18)}
-  .hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-90px;top:-120px;background:rgba(255,255,255,.08)}
-  .brand{display:flex;gap:15px;align-items:center;margin-bottom:22px}
-  .mark{display:grid;place-items:center;width:68px;height:68px;border-radius:18px;background:#fff;color:var(--azul);font-size:25px;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.14)}
-  .eyebrow{margin:0 0 5px;font-size:12px;font-weight:800;letter-spacing:.08em}
-  h1{max-width:850px;margin:0;font-size:clamp(28px,4vw,44px);line-height:1.1}
-  .hero p:last-child{max-width:860px;margin:14px 0 0;color:#eaf4fb}
-  .cutoff{display:inline-block;margin-top:18px;padding:8px 12px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.11);font-size:13px;font-weight:700}
-  .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
-  .card{background:#fff;border:1px solid var(--borde);border-radius:16px;padding:18px;box-shadow:0 9px 24px rgba(27,57,80,.07)}
-  .card span{display:block;color:var(--muted);font-size:12px;font-weight:700}
-  .card strong{display:block;margin:7px 0 4px;color:var(--azul);font-size:clamp(22px,3vw,31px);line-height:1.1}
-  .card small{color:var(--muted)}
-  .card--main{border-top:5px solid var(--dorado)}
-  .card--green{border-top:5px solid var(--verde)}
-  .layout{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.5fr);gap:16px}
-  .panel{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;box-shadow:0 9px 24px rgba(27,57,80,.07)}
-  .panel h2{margin:0 0 5px;color:var(--azul);font-size:22px}
-  .panel .intro{margin:0 0 18px;color:var(--muted);font-size:14px}
-  .donut-wrap{display:grid;place-items:center;padding:12px 0 4px}
-  .donut{width:250px;height:250px;position:relative}
-  .donut svg{width:100%;height:100%;transform:rotate(-90deg)}
-  .donut circle{fill:none;stroke-width:18}
-  .donut .track{stroke:#e4edf3}
-  .donut .value{stroke:var(--dorado);stroke-linecap:round;stroke-dasharray:0.096252 100}
-  .donut-label{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
-  .donut-label strong{font-size:42px;line-height:1;color:var(--azul)}
-  .donut-label span{max-width:150px;color:var(--muted);font-size:12px}
-  .formula{margin-top:18px;padding:14px;border-radius:12px;background:var(--suave);border:1px solid var(--borde);font-size:13px}
-  .formula code{display:block;margin-top:6px;color:var(--azul);font-family:Consolas,monospace;font-weight:700;overflow-wrap:anywhere}
-  .bar-row{display:grid;grid-template-columns:130px 1fr 72px;gap:10px;align-items:center;margin:15px 0}
-  .bar-row label{font-size:13px;font-weight:700}
-  .bar{height:13px;background:#e6edf2;border-radius:999px;overflow:hidden}
-  .bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--azul2),var(--verde))}
-  .bar-row output{font-size:13px;text-align:right;font-weight:800;color:var(--azul)}
-  .note{margin-top:18px;padding:15px 16px;border-left:5px solid var(--dorado);background:#fff9e8;border-radius:10px;font-size:13px}
-  .note strong{color:var(--azul)}
-  .table-panel{margin-top:16px}
-  .scroll{overflow-x:auto;border:1px solid var(--borde);border-radius:12px}
-  table{width:100%;border-collapse:collapse;min-width:900px;background:#fff}
-  th,td{padding:12px 13px;border-bottom:1px solid #e4ebf0;text-align:left;font-size:12px;vertical-align:top}
-  th{background:var(--azul);color:#fff;position:sticky;top:0}
-  tr:last-child td{border-bottom:0}
-  .money{white-space:nowrap;font-weight:700}
-  .status{display:inline-block;padding:5px 9px;border-radius:999px;background:#eaf4ee;color:var(--verde);font-weight:800}
-  .status--zero{background:#f4eded;color:var(--rojo)}
-  .method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
-  .method article{padding:16px;border:1px solid var(--borde);border-radius:13px;background:var(--suave)}
-  .method strong{display:block;color:var(--azul);margin-bottom:5px}
-  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-  .btn{border:0;border-radius:9px;padding:11px 15px;cursor:pointer;font-weight:800;text-decoration:none}
-  .btn--primary{background:var(--azul);color:#fff}
-  .btn--secondary{background:#e5edf3;color:var(--azul)}
-  footer{padding:22px 5px;text-align:center;color:var(--muted);font-size:12px}
-  @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}.layout{grid-template-columns:1fr}.method{grid-template-columns:1fr}}
-  @media(max-width:600px){.cards{grid-template-columns:1fr}.hero{padding:24px}.bar-row{grid-template-columns:105px 1fr 58px}}
-  @media print{
-    body{background:#fff}.wrap{width:100%;margin:0}.hero,.card,.panel{box-shadow:none}.actions{display:none}
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Dashboard público del porcentaje del presupuesto destinado al proceso de participación ciudadana de San Pedro, Valle del Cauca, vigencia 2026.">
+  <meta name="theme-color" content="#123b5d">
+  <title>Presupuesto para participación ciudadana 2026 | San Pedro</title>
+  <link rel="icon" href="./assets/img/escudo-san-pedro.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
-<main class="wrap">
-  <section class="hero">
-    <div class="brand">
-      <div class="mark" aria-hidden="true">SP</div>
-      <div>
-        <p class="eyebrow">ALCALDÍA MUNICIPAL DE SAN PEDRO · VALLE DEL CAUCA</p>
-        <strong>Menú Participa · Planeación y presupuesto participativo</strong>
-      </div>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="#inicio" aria-label="Inicio del dashboard de presupuesto para participación">
+        <img
+          class="brand__logo"
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6rBXvg9BUe2mBbiTutI7gNa3QE6mV1xI3818r5Cbnk7VEJbUGhGi75zACieUR9j8Fi7HKYPnZG0VQ4ee82Tf-42D6FDjxgblQ8gEU567-USJgig2KNYFWuhR-4pmj3tgvdGvX1Y5Cr-o/s640/ESCUDO%2BSAN%2BPEDRO.JPG"
+          data-fallback="./assets/img/escudo-san-pedro.svg"
+          alt="Escudo de San Pedro, Valle del Cauca">
+        <span>
+          <small>Alcaldía Municipal de</small>
+          <strong>San Pedro</strong>
+          <em>Valle del Cauca</em>
+        </span>
+      </a>
+
+      <button class="print-button" type="button" data-print>
+        <span aria-hidden="true">⎙</span>
+        Imprimir informe
+      </button>
     </div>
-    <h1>Porcentaje del presupuesto para el proceso de participación ciudadana</h1>
-    <p>
-      Información presupuestal del rubro identificado directamente como
-      <strong>“Servicio de promoción a la participación ciudadana”</strong>,
-      comparado con el presupuesto definitivo municipal.
-    </p>
-    <span class="cutoff">Vigencia 2026 · Corte al 31 de marzo de 2026</span>
-  </section>
+  </header>
 
-  <section class="cards" aria-label="Indicadores principales">
-    <article class="card">
-      <span>Presupuesto definitivo municipal</span>
-      <strong>$31,301,037,487</strong>
-      <small>Base total del cálculo</small>
-    </article>
-    <article class="card card--main">
-      <span>Presupuesto directo para participación</span>
-      <strong>$30,127,937</strong>
-      <small>Rubro 4502001</small>
-    </article>
-    <article class="card card--main">
-      <span>Porcentaje del presupuesto</span>
-      <strong>0.0963%</strong>
-      <small>Equivale aproximadamente a 0,10%</small>
-    </article>
-    <article class="card card--green">
-      <span>Ejecución por compromisos</span>
-      <strong>91.87%</strong>
-      <small>$27,679,937 comprometidos</small>
-    </article>
-  </section>
+  <nav class="section-nav" aria-label="Navegación del dashboard">
+    <div class="section-nav__inner">
+      <a href="#resumen">Resumen</a>
+      <a href="#calculo">Cálculo</a>
+      <a href="#ejecucion">Ejecución</a>
+      <a href="#detalle">Detalle</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#preguntas">Preguntas frecuentes</a>
+    </div>
+  </nav>
 
-  <section class="layout">
-    <article class="panel">
-      <h2>Participación dentro del presupuesto municipal</h2>
-      <p class="intro">La gráfica muestra qué proporción representa el rubro directo frente al presupuesto definitivo total.</p>
-      <div class="donut-wrap">
-        <div class="donut" role="img" aria-label="El presupuesto directo de participación ciudadana representa 0.0963 por ciento del presupuesto definitivo municipal">
-          <svg viewBox="0 0 42 42" aria-hidden="true">
-            <circle class="track" cx="21" cy="21" r="15.9155"></circle>
-            <circle class="value" cx="21" cy="21" r="15.9155" pathLength="100"></circle>
-          </svg>
-          <div class="donut-label">
-            <strong>0.0963%</strong>
-            <span>del presupuesto definitivo municipal</span>
+  <main id="contenido">
+    <section id="inicio" class="hero">
+      <div class="hero__inner">
+        <div class="hero__logo">
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6rBXvg9BUe2mBbiTutI7gNa3QE6mV1xI3818r5Cbnk7VEJbUGhGi75zACieUR9j8Fi7HKYPnZG0VQ4ee82Tf-42D6FDjxgblQ8gEU567-USJgig2KNYFWuhR-4pmj3tgvdGvX1Y5Cr-o/s640/ESCUDO%2BSAN%2BPEDRO.JPG"
+            data-fallback="./assets/img/escudo-san-pedro.svg"
+            alt="Escudo municipal de San Pedro">
+        </div>
+
+        <div class="hero__content">
+          <p class="eyebrow">MENÚ PARTICIPA · PLANEACIÓN Y PRESUPUESTO PARTICIPATIVO</p>
+          <h1>Porcentaje del presupuesto para el proceso de participación ciudadana</h1>
+          <p class="hero__lead">
+            Presentación pública, explicativa y verificable de la apropiación presupuestal
+            identificada directamente como <strong>Servicio de promoción a la participación ciudadana</strong>.
+          </p>
+
+          <div class="hero__meta">
+            <span>Vigencia 2026</span>
+            <span>Corte: 31 de marzo de 2026</span>
+            <span>Fuente: ejecución presupuestal municipal</span>
           </div>
         </div>
       </div>
-      <div class="formula">
-        <strong>Fórmula aplicada</strong>
-        <code>($ 30,127,937 ÷ $ 31,301,037,487) × 100 = 0.0963%</code>
-      </div>
-    </article>
+    </section>
 
-    <article class="panel">
-      <h2>Ejecución del rubro de participación</h2>
-      <p class="intro">Estado presupuestal del servicio de promoción a la participación ciudadana.</p>
+    <div class="page-shell">
+      <section class="scope-alert" aria-labelledby="alcance-titulo">
+        <div class="scope-alert__icon" aria-hidden="true">i</div>
+        <div>
+          <h2 id="alcance-titulo">Qué demuestra este indicador</h2>
+          <p>
+            El valor muestra cuánto representa el rubro presupuestal destinado directamente a promover
+            la participación ciudadana frente al presupuesto definitivo total del municipio.
+            <strong>No significa, por sí solo, que esos recursos hayan sido asignados mediante un ejercicio
+            de presupuesto participativo decidido por la comunidad.</strong>
+          </p>
+        </div>
+      </section>
 
-      <div class="bar-row">
-        <label>Certificados</label>
-        <div class="bar"><i style="width:100.00%"></i></div>
-        <output>100.00%</output>
-      </div>
-      <div class="bar-row">
-        <label>Comprometido</label>
-        <div class="bar"><i style="width:91.87%"></i></div>
-        <output>91.87%</output>
-      </div>
-      <div class="bar-row">
-        <label>Obligaciones</label>
-        <div class="bar"><i style="width:0.00%"></i></div>
-        <output>0.00%</output>
-      </div>
-      <div class="bar-row">
-        <label>Pagos</label>
-        <div class="bar"><i style="width:0.00%"></i></div>
-        <output>0.00%</output>
-      </div>
+      <section id="resumen" class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--blue">RESULTADO PRINCIPAL</p>
+            <h2>Resumen ciudadano del presupuesto</h2>
+          </div>
+          <p>Las cifras corresponden al corte presupuestal del primer trimestre de 2026.</p>
+        </div>
 
-      <div class="note">
-        <strong>Lectura ciudadana:</strong> al corte, el rubro tiene el 100% certificado y el
-        91.87% comprometido. No registra obligaciones ni pagos en el reporte del primer trimestre.
-        Esto no significa que el proceso no exista; significa que al 31 de marzo aún no se habían causado ni desembolsado esos recursos.
-      </div>
-    </article>
-  </section>
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span class="metric-card__label">Presupuesto definitivo municipal</span>
+            <strong data-counter="31301037487" data-format="currency">$31.301.037.487</strong>
+            <small>Valor total utilizado como denominador.</small>
+          </article>
 
-  <section class="panel table-panel">
-    <h2>Detalle presupuestal publicado</h2>
-    <p class="intro">Valores tomados del detalle de gastos de la ejecución presupuestal 2026.</p>
-    <div class="scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>Rubro</th><th>Descripción</th><th>Definitivo</th><th>Certificados</th>
-            <th>Comprometido</th><th>Obligaciones</th><th>Pagos</th><th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2.3.2.02.02-.0064502001</td>
-            <td>Servicio de promoción a la participación ciudadana<br><small>Sector 45 · Programa 4502 · Producto 4502001</small></td>
-            <td class="money">$30,127,937</td>
-            <td class="money">$30,127,937</td>
-            <td class="money">$27,679,937</td>
-            <td class="money">$0</td>
-            <td class="money">$0</td>
-            <td><span class="status">En desarrollo</span></td>
-          </tr>
-        </tbody>
-      </table>
+          <article class="metric-card metric-card--gold">
+            <span class="metric-card__label">Presupuesto directo para participación</span>
+            <strong data-counter="30127937" data-format="currency">$30.127.937</strong>
+            <small>Apropiación definitiva del producto 4502001.</small>
+          </article>
+
+          <article class="metric-card metric-card--featured">
+            <span class="metric-card__label">Porcentaje exacto</span>
+            <strong data-counter="0.09625219934806566" data-format="percent4">0,0963 %</strong>
+            <small>Presentación ciudadana redondeada: <b>0,10 %</b>.</small>
+          </article>
+
+          <article class="metric-card metric-card--green">
+            <span class="metric-card__label">Recursos comprometidos</span>
+            <strong data-counter="27679937" data-format="currency">$27.679.937</strong>
+            <small>Equivale al 91,87 % del rubro.</small>
+          </article>
+
+          <article class="metric-card">
+            <span class="metric-card__label">Saldo sin compromiso</span>
+            <strong data-counter="2448000" data-format="currency">$2.448.000</strong>
+            <small>Equivale al 8,13 % de la apropiación.</small>
+          </article>
+        </div>
+
+        <div class="context-grid">
+          <article class="context-card context-card--primary">
+            <span>Por cada</span>
+            <strong>$1.000.000</strong>
+            <p>del presupuesto definitivo municipal, aproximadamente <b>$963</b> corresponden al rubro directo de promoción de la participación ciudadana.</p>
+          </article>
+
+          <article class="context-card">
+            <span>Por cada</span>
+            <strong>$100.000</strong>
+            <p>del presupuesto definitivo municipal, aproximadamente <b>$96</b> corresponden al mismo rubro.</p>
+          </article>
+
+          <article class="context-card">
+            <span>Forma de publicación</span>
+            <strong>0,10 %</strong>
+            <p>Es el resultado redondeado a dos decimales para lectura ciudadana. El dato técnico exacto se conserva en la ficha metodológica.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="calculo" class="section panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--blue">CÁLCULO DEL INDICADOR</p>
+            <h2>Cómo se obtiene el porcentaje</h2>
+          </div>
+          <p>El cálculo utiliza un numerador y un denominador claramente identificados.</p>
+        </div>
+
+        <div class="formula-layout">
+          <div class="formula-visual" aria-label="Fórmula del porcentaje del presupuesto para participación">
+            <div class="formula-part">
+              <span>Numerador</span>
+              <strong>$30.127.937</strong>
+              <small>Presupuesto definitivo del rubro directo.</small>
+            </div>
+
+            <div class="formula-symbol" aria-hidden="true">÷</div>
+
+            <div class="formula-part">
+              <span>Denominador</span>
+              <strong>$31.301.037.487</strong>
+              <small>Presupuesto definitivo municipal.</small>
+            </div>
+
+            <div class="formula-symbol" aria-hidden="true">× 100</div>
+
+            <div class="formula-result">
+              <span>Resultado exacto</span>
+              <strong>0,096252 %</strong>
+              <small>Resultado publicado: 0,0963 % · Resultado ciudadano: 0,10 %.</small>
+            </div>
+          </div>
+
+          <aside class="technical-card">
+            <h3>Ficha rápida del cálculo</h3>
+            <dl>
+              <div><dt>Rubro</dt><dd>2.3.2.02.02-.0064502001</dd></div>
+              <div><dt>Descripción</dt><dd>Servicio de promoción a la participación ciudadana</dd></div>
+              <div><dt>Sector</dt><dd>Código 45</dd></div>
+              <div><dt>Programa</dt><dd>Código 4502</dd></div>
+              <div><dt>Producto</dt><dd>Código 4502001</dd></div>
+              <div><dt>Fecha de corte</dt><dd>31 de marzo de 2026</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="share-visual">
+          <div class="share-visual__heading">
+            <h3>Escala ampliada para facilitar la lectura</h3>
+            <p>
+              Como el porcentaje es menor al 0,1 %, una gráfica ordinaria sobre el 100 % lo haría casi imperceptible.
+              Esta escala se amplía de 0 % a 1 % para mostrar su ubicación con claridad.
+            </p>
+          </div>
+
+          <div class="scale-card">
+            <div class="scale-labels" aria-hidden="true">
+              <span>0 %</span><span>0,25 %</span><span>0,50 %</span><span>0,75 %</span><span>1 %</span>
+            </div>
+            <div class="scale-track" role="img" aria-label="El porcentaje 0,0963 por ciento se ubica cerca de una décima del primer punto porcentual">
+              <span class="scale-fill" style="width:9.6252199348%"></span>
+              <span class="scale-marker" style="left:9.6252199348%">
+                <b>0,0963 %</b>
+              </span>
+            </div>
+            <div class="scale-foot">
+              <span>Escala ampliada: 0 % a 1 %</span>
+              <span>El indicador equivale al 9,63 % de un punto porcentual.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ejecucion" class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--blue">CADENA DE EJECUCIÓN</p>
+            <h2>Estado del rubro presupuestal</h2>
+          </div>
+          <p>Seleccione una etapa para consultar el valor, el porcentaje y su significado.</p>
+        </div>
+
+        <div class="execution-layout">
+          <div class="stage-list" role="tablist" aria-label="Etapas de ejecución presupuestal">
+            <button class="stage-button is-active" type="button" role="tab" aria-selected="true" data-stage="definitivo">
+              <span>1</span>
+              <div><strong>Presupuesto definitivo</strong><small>$30.127.937</small></div>
+            </button>
+            <button class="stage-button" type="button" role="tab" aria-selected="false" data-stage="certificados">
+              <span>2</span>
+              <div><strong>Certificados</strong><small>$30.127.937</small></div>
+            </button>
+            <button class="stage-button" type="button" role="tab" aria-selected="false" data-stage="comprometido">
+              <span>3</span>
+              <div><strong>Comprometido</strong><small>$27.679.937</small></div>
+            </button>
+            <button class="stage-button" type="button" role="tab" aria-selected="false" data-stage="obligaciones">
+              <span>4</span>
+              <div><strong>Obligaciones</strong><small>$0</small></div>
+            </button>
+            <button class="stage-button" type="button" role="tab" aria-selected="false" data-stage="pagos">
+              <span>5</span>
+              <div><strong>Pagos</strong><small>$0</small></div>
+            </button>
+          </div>
+
+          <article class="stage-detail" aria-live="polite">
+            <div class="stage-detail__top">
+              <div>
+                <span id="stageEyebrow">ETAPA 1 DE 5</span>
+                <h3 id="stageTitle">Presupuesto definitivo</h3>
+              </div>
+              <strong id="stageValue">$30.127.937</strong>
+            </div>
+
+            <div class="progress-summary">
+              <div class="progress-summary__labels">
+                <span>Porcentaje frente al presupuesto del rubro</span>
+                <b id="stagePercent">100,00 %</b>
+              </div>
+              <div class="progress-track">
+                <span id="stageBar" style="width:100%"></span>
+              </div>
+            </div>
+
+            <p id="stageDescription">
+              Es la apropiación vigente disponible para el rubro después de las modificaciones presupuestales registradas al corte.
+            </p>
+
+            <div class="stage-facts">
+              <div><span>Valor pendiente hasta esta etapa</span><strong id="stageRemaining">$0</strong></div>
+              <div><span>Lectura ciudadana</span><strong id="stageReading">El rubro cuenta con una apropiación definitiva de $30.127.937.</strong></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="execution-bars" aria-label="Comparación de las etapas de ejecución">
+          <article>
+            <div><span>Presupuesto definitivo</span><strong>100,00 %</strong></div>
+            <div class="bar"><i style="width:100%"></i></div>
+            <small>$30.127.937</small>
+          </article>
+          <article>
+            <div><span>Certificados</span><strong>100,00 %</strong></div>
+            <div class="bar"><i style="width:100%"></i></div>
+            <small>$30.127.937</small>
+          </article>
+          <article>
+            <div><span>Comprometido</span><strong>91,87 %</strong></div>
+            <div class="bar"><i style="width:91.8746510921%"></i></div>
+            <small>$27.679.937</small>
+          </article>
+          <article>
+            <div><span>Obligaciones</span><strong>0,00 %</strong></div>
+            <div class="bar"><i style="width:0%"></i></div>
+            <small>$0</small>
+          </article>
+          <article>
+            <div><span>Pagos</span><strong>0,00 %</strong></div>
+            <div class="bar"><i style="width:0%"></i></div>
+            <small>$0</small>
+          </article>
+        </div>
+
+        <div class="interpretation-note">
+          <div aria-hidden="true">!</div>
+          <p>
+            <strong>Interpretación del corte:</strong> que las obligaciones y los pagos estén en cero al 31 de marzo
+            no permite concluir que el proceso no exista o que los recursos se hayan perdido. Significa que,
+            en el reporte utilizado, todavía no se habían registrado esas etapas posteriores de la ejecución.
+          </p>
+        </div>
+      </section>
+
+      <section id="detalle" class="section panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--blue">TRAZABILIDAD PRESUPUESTAL</p>
+            <h2>Detalle específico del rubro</h2>
+          </div>
+          <p>Información presentada sin agregar rubros indirectos o conceptos ajenos al indicador.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Detalle de la apropiación y ejecución del rubro de participación ciudadana</caption>
+            <thead>
+              <tr>
+                <th>Concepto</th>
+                <th>Valor</th>
+                <th>% del rubro</th>
+                <th>Diferencia frente al definitivo</th>
+                <th>Lectura</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Presupuesto definitivo</strong><small>Base vigente del rubro</small></td>
+                <td class="money">$30.127.937</td>
+                <td>100,00 %</td>
+                <td class="money">$0</td>
+                <td>Apropiación total objeto del seguimiento.</td>
+              </tr>
+              <tr>
+                <td><strong>Certificados</strong><small>Disponibilidad presupuestal registrada</small></td>
+                <td class="money">$30.127.937</td>
+                <td>100,00 %</td>
+                <td class="money">$0</td>
+                <td>La totalidad del rubro aparece certificada.</td>
+              </tr>
+              <tr>
+                <td><strong>Comprometido</strong><small>Afectación presupuestal registrada</small></td>
+                <td class="money">$27.679.937</td>
+                <td>91,87 %</td>
+                <td class="money">$2.448.000</td>
+                <td>Queda un 8,13 % sin compromiso al corte.</td>
+              </tr>
+              <tr>
+                <td><strong>Obligaciones</strong><small>Bienes o servicios reconocidos como recibidos</small></td>
+                <td class="money">$0</td>
+                <td>0,00 %</td>
+                <td class="money">$30.127.937</td>
+                <td>No se registran obligaciones en el reporte del trimestre.</td>
+              </tr>
+              <tr>
+                <td><strong>Pagos</strong><small>Desembolsos registrados</small></td>
+                <td class="money">$0</td>
+                <td>0,00 %</td>
+                <td class="money">$30.127.937</td>
+                <td>No se registran pagos en el reporte del trimestre.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="classification-grid">
+          <article>
+            <span>Rubro presupuestal</span>
+            <strong>2.3.2.02.02-.0064502001</strong>
+          </article>
+          <article>
+            <span>Producto</span>
+            <strong>4502001</strong>
+          </article>
+          <article>
+            <span>Programa</span>
+            <strong>4502</strong>
+          </article>
+          <article>
+            <span>Sector</span>
+            <strong>45</strong>
+          </article>
+          <article class="classification-grid__wide">
+            <span>Descripción oficial identificada en la fuente</span>
+            <strong>Servicio de promoción a la participación ciudadana</strong>
+          </article>
+        </div>
+      </section>
+
+      <section id="metodologia" class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--blue">METODOLOGÍA Y CONTROL</p>
+            <h2>Alcance, criterios y limitaciones</h2>
+          </div>
+          <p>La metodología evita sumar recursos que no estén identificados directamente con el proceso.</p>
+        </div>
+
+        <div class="method-grid">
+          <article>
+            <span class="method-number">01</span>
+            <h3>Fuente</h3>
+            <p>
+              Ejecución presupuestal de ingresos y gastos del Municipio de San Pedro,
+              vigencia 2026, con corte al 31 de marzo.
+            </p>
+          </article>
+
+          <article>
+            <span class="method-number">02</span>
+            <h3>Numerador</h3>
+            <p>
+              Presupuesto definitivo del rubro denominado directamente
+              “Servicio de promoción a la participación ciudadana”.
+            </p>
+          </article>
+
+          <article>
+            <span class="method-number">03</span>
+            <h3>Denominador</h3>
+            <p>
+              Presupuesto definitivo municipal reportado para la vigencia 2026:
+              $31.301.037.487.
+            </p>
+          </article>
+
+          <article>
+            <span class="method-number">04</span>
+            <h3>Criterio de inclusión</h3>
+            <p>
+              Solo se incorporó el rubro cuyo nombre y clasificación presupuestal
+              se relacionan de forma directa con la promoción de la participación.
+            </p>
+          </article>
+
+          <article>
+            <span class="method-number">05</span>
+            <h3>Criterio de exclusión</h3>
+            <p>
+              No se sumaron rubros de convivencia, programas sociales, comunicaciones,
+              atención institucional u otros conceptos con relación indirecta.
+            </p>
+          </article>
+
+          <article>
+            <span class="method-number">06</span>
+            <h3>Actualización</h3>
+            <p>
+              El indicador debe recalcularse con cada nuevo corte presupuestal,
+              conservando la misma fórmula y documentando cualquier modificación del rubro.
+            </p>
+          </article>
+        </div>
+
+        <div class="two-column">
+          <article class="definition-card">
+            <h3>Qué está incluido</h3>
+            <ul>
+              <li>Presupuesto definitivo del producto 4502001.</li>
+              <li>Certificados, compromisos, obligaciones y pagos del mismo rubro.</li>
+              <li>Comparación contra el presupuesto definitivo total municipal.</li>
+              <li>Resultado exacto y redondeado, con fecha de corte.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card definition-card--exclude">
+            <h3>Qué no está incluido</h3>
+            <ul>
+              <li>Recursos de otros programas que solo tengan una relación indirecta.</li>
+              <li>Aportes en especie o trabajo institucional no cuantificado en este rubro.</li>
+              <li>Recursos que puedan existir en cortes posteriores.</li>
+              <li>Una afirmación de presupuesto participativo sin acuerdos ciudadanos documentados.</li>
+            </ul>
+          </article>
+        </div>
+
+        <details class="accordion">
+          <summary>Glosario presupuestal</summary>
+          <div class="accordion__content glossary-grid">
+            <article><strong>Presupuesto definitivo</strong><p>Apropiación vigente después de las modificaciones presupuestales registradas a la fecha de corte.</p></article>
+            <article><strong>Certificado</strong><p>Disponibilidad que garantiza la existencia de apropiación suficiente para asumir un gasto.</p></article>
+            <article><strong>Compromiso</strong><p>Afectación presupuestal asociada a un acto mediante el cual la entidad compromete recursos.</p></article>
+            <article><strong>Obligación</strong><p>Valor reconocido como exigible después de recibir bienes, servicios o cumplir la condición correspondiente.</p></article>
+            <article><strong>Pago</strong><p>Desembolso registrado para atender una obligación.</p></article>
+            <article><strong>Porcentaje de ejecución</strong><p>Relación entre el valor alcanzado en una etapa y la apropiación definitiva del rubro.</p></article>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>Control de calidad del indicador</summary>
+          <div class="accordion__content checklist">
+            <p><span>✓</span> Se identifica el rubro exacto y su descripción.</p>
+            <p><span>✓</span> Se informa el corte presupuestal.</p>
+            <p><span>✓</span> Se separa apropiación, certificado, compromiso, obligación y pago.</p>
+            <p><span>✓</span> Se conserva el resultado exacto y el redondeado.</p>
+            <p><span>✓</span> Se explican los rubros excluidos.</p>
+            <p><span>✓</span> Se evita presentar la apropiación como presupuesto participativo acordado.</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="preguntas" class="section panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--blue">LECTURA CIUDADANA</p>
+            <h2>Preguntas frecuentes</h2>
+          </div>
+          <p>Respuestas breves para interpretar correctamente el dashboard.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>¿Por qué el porcentaje parece pequeño?</summary>
+            <p>
+              Porque compara un rubro específico de $30.127.937 con el presupuesto definitivo total del municipio,
+              que supera los $31.301 millones. El indicador no suma programas relacionados de manera indirecta.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿El 0,10 % es el valor exacto?</summary>
+            <p>
+              Es el valor redondeado a dos decimales. El cálculo técnico es 0,096252 %, que se presenta como
+              0,0963 % con cuatro decimales.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Certificado significa que el dinero ya fue pagado?</summary>
+            <p>
+              No. La certificación acredita disponibilidad presupuestal. El pago es una etapa posterior y,
+              en el corte analizado, figura en cero.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿El 91,87 % comprometido ya fue ejecutado físicamente?</summary>
+            <p>
+              El compromiso evidencia afectación presupuestal. No demuestra por sí solo que los bienes o servicios
+              hayan sido recibidos, porque para ello deben revisarse las obligaciones, los pagos y los soportes contractuales.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Este dato demuestra que existe presupuesto participativo?</summary>
+            <p>
+              No por sí solo. Demuestra una apropiación para promover la participación. Un presupuesto participativo
+              requiere además deliberación, acuerdos ciudadanos y trazabilidad sobre la destinación de los recursos.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Cuándo debe actualizarse?</summary>
+            <p>
+              Con cada nuevo reporte de ejecución presupuestal o cuando se modifique la apropiación definitiva del rubro
+              o del presupuesto municipal.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="source-panel">
+        <div>
+          <p class="eyebrow eyebrow--blue">FUENTE Y RESPONSABILIDAD</p>
+          <h2>Información utilizada</h2>
+          <p>
+            Fuente documental: <strong>Ejecución presupuestal de ingresos y gastos 2026</strong>,
+            corte al 31 de marzo de 2026. Archivo de trabajo:
+            <strong>Ejecucion_Presupuestal_2026_San_Pedro_ITA.xlsx</strong>,
+            detalle de gastos.
+          </p>
+          <p>
+            La página presenta una lectura ciudadana del indicador y no sustituye los estados presupuestales,
+            actos administrativos, certificados, registros presupuestales o soportes contractuales de la entidad.
+          </p>
+        </div>
+
+        <button class="print-button print-button--large" type="button" data-print>
+          <span aria-hidden="true">⎙</span>
+          Imprimir o guardar como PDF
+        </button>
+      </section>
     </div>
+  </main>
 
-    <div class="method">
-      <article>
-        <strong>Numerador</strong>
-        Presupuesto definitivo del rubro directamente denominado “Servicio de promoción a la participación ciudadana”.
-      </article>
-      <article>
-        <strong>Denominador</strong>
-        Presupuesto definitivo total del Municipio de San Pedro para la vigencia 2026.
-      </article>
-      <article>
-        <strong>Alcance</strong>
-        El indicador informa recursos asignados al proceso de promoción de la participación. No afirma que la ciudadanía haya decidido directamente la destinación del rubro.
-      </article>
+  <footer class="footer">
+    <div>
+      <strong>Alcaldía Municipal de San Pedro, Valle del Cauca</strong>
+      <span>NIT 800.100.526-3 · Menú Participa · Vigencia 2026</span>
     </div>
-
-    <div class="note">
-      <strong>Transparencia metodológica:</strong> no se sumaron otros programas de convivencia,
-      asistencia institucional o atención social, porque no están denominados de manera directa y exclusiva
-      como promoción de la participación ciudadana. Así se evita inflar artificialmente el porcentaje.
-    </div>
-
-    <div class="actions">
-      <button class="btn btn--primary" type="button" onclick="window.print()">Imprimir o guardar en PDF</button>
-      <button class="btn btn--secondary" type="button" onclick="descargarCSV()">Descargar datos CSV</button>
-    </div>
-  </section>
-
-  <footer>
-    Fuente: Ejecución presupuestal de ingresos y gastos 2026, corte al 31 de marzo de 2026,
-    Secretaría de Hacienda Municipal. Documento de apoyo: Ejecucion_Presupuestal_2026_San_Pedro_ITA.xlsx.
+    <a href="#inicio">Volver al inicio ↑</a>
   </footer>
-</main>
 
-<script>
-const datos = {"entidad": "Alcaldía Municipal de San Pedro, Valle del Cauca", "vigencia": 2026, "fechaCorte": "2026-03-31", "presupuestoDefinitivoMunicipal": 31301037487, "presupuestoParticipacion": 30127937, "porcentajePresupuestoParticipacion": 0.096252, "rubro": "2.3.2.02.02-.0064502001", "descripcion": "Servicio de promoción a la participación ciudadana", "codigoSector": "45", "codigoPrograma": "4502", "codigoProducto": "4502001", "certificados": 30127937, "comprometido": 27679937, "obligaciones": 0, "pagos": 0, "certificadoSinCompromiso": 2448000, "fuente": "Ejecucion_Presupuestal_2026_San_Pedro_ITA.xlsx - GASTOS_DETALLE"};
-
-function descargarCSV(){
-  const filas = [
-    ["Campo","Valor"],
-    ["Entidad",datos.entidad],
-    ["Vigencia",datos.vigencia],
-    ["Fecha de corte",datos.fechaCorte],
-    ["Presupuesto definitivo municipal",datos.presupuestoDefinitivoMunicipal],
-    ["Presupuesto participación",datos.presupuestoParticipacion],
-    ["Porcentaje presupuesto participación",datos.porcentajePresupuestoParticipacion],
-    ["Rubro",datos.rubro],
-    ["Descripción",datos.descripcion],
-    ["Certificados",datos.certificados],
-    ["Comprometido",datos.comprometido],
-    ["Obligaciones",datos.obligaciones],
-    ["Pagos",datos.pagos],
-    ["Fuente",datos.fuente]
-  ];
-  const csv = "\uFEFF" + filas.map(f => f.map(v => `"${String(v).replaceAll('"','""')}"`).join(";")).join("\n");
-  const blob = new Blob([csv],{type:"text/csv;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href=url;
-  a.download="porcentaje_presupuesto_participacion_2026.csv";
-  a.click();
-  URL.revokeObjectURL(url);
-}
-</script>
+  <script src="./assets/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 390" role="img" aria-labelledby="title desc">
+<title id="title">Escudo gráfico de respaldo de San Pedro, Valle del Cauca</title>
+<desc id="desc">Escudo dividido en campos que representan el paisaje, la agricultura y el territorio.</desc>
+<path d="M35 38 Q160 3 285 38 L270 255 Q258 330 160 375 Q62 330 50 255Z" fill="#fff" stroke="#173657" stroke-width="14"/>
+<path d="M50 188H270M160 20V335" stroke="#173657" stroke-width="6"/>
+<rect x="58" y="50" width="96" height="130" fill="#eef7ff"/>
+<circle cx="120" cy="85" r="22" fill="#f7c928"/>
+<path d="M58 150 L90 115 L116 139 L144 98 L154 150Z" fill="#159447"/>
+<rect x="166" y="50" width="96" height="130" fill="#eaf8ec"/>
+<path d="M185 122 L245 98" stroke="#4e5a62" stroke-width="18" stroke-linecap="round"/>
+<circle cx="245" cy="98" r="12" fill="#555"/>
+<circle cx="225" cy="142" r="11" fill="#222"/><circle cx="248" cy="142" r="11" fill="#222"/>
+<rect x="58" y="196" width="96" height="132" fill="#f5fff2"/>
+<path d="M105 310V235" stroke="#498e38" stroke-width="8"/>
+<path d="M105 260 C75 245 78 220 105 242 C132 218 140 245 105 260Z" fill="#4b9b45"/>
+<path d="M105 285 C72 270 78 245 105 264 C137 242 143 270 105 285Z" fill="#6bad55"/>
+<rect x="166" y="196" width="96" height="132" fill="#fffbea"/>
+<path d="M205 310 C182 274 186 231 205 205 C224 231 228 274 205 310Z" fill="#f4c02d"/>
+<path d="M230 310 C207 274 211 231 230 205 C249 231 253 274 230 310Z" fill="#ffcf36"/>
+<path d="M195 310 C172 280 174 245 190 222" fill="none" stroke="#5ba647" stroke-width="11"/>
+<path d="M240 310 C263 280 261 245 245 222" fill="none" stroke="#5ba647" stroke-width="11"/>
+<text x="160" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#173657">SAN PEDRO</text>
+</svg>
