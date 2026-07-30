@@ -1,0 +1,19 @@
+{
+  "entidad": "Alcaldía Municipal de San Pedro, Valle del Cauca",
+  "vigencia": 2026,
+  "fechaCorte": "2026-03-31",
+  "presupuestoDefinitivoMunicipal": 31301037487,
+  "presupuestoParticipacion": 30127937,
+  "porcentajePresupuestoParticipacion": 0.096252,
+  "rubro": "2.3.2.02.02-.0064502001",
+  "descripcion": "Servicio de promoción a la participación ciudadana",
+  "codigoSector": "45",
+  "codigoPrograma": "4502",
+  "codigoProducto": "4502001",
+  "certificados": 30127937,
+  "comprometido": 27679937,
+  "obligaciones": 0,
+  "pagos": 0,
+  "certificadoSinCompromiso": 2448000,
+  "fuente": "Ejecucion_Presupuestal_2026_San_Pedro_ITA.xlsx - GASTOS_DETALLE"
+}

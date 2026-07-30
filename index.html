@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Porcentaje del presupuesto destinado al proceso de participación ciudadana de San Pedro, Valle del Cauca, vigencia 2026.">
+<title>Presupuesto para participación ciudadana 2026 | San Pedro</title>
+<style>
+  :root{
+    --azul:#0b3d66;--azul2:#17679d;--verde:#2e7d52;--dorado:#d6a62d;
+    --texto:#243746;--muted:#637483;--fondo:#eef4f8;--blanco:#fff;
+    --borde:#d4e0e8;--suave:#f6f9fb;--rojo:#a93636;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--fondo);color:var(--texto);font-family:"Century Gothic",Arial,sans-serif;line-height:1.55}
+  button{font:inherit}
+  .wrap{width:min(1120px,calc(100% - 28px));margin:24px auto 40px}
+  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;border-radius:22px;padding:34px;box-shadow:0 18px 42px rgba(11,61,102,.18)}
+  .hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-90px;top:-120px;background:rgba(255,255,255,.08)}
+  .brand{display:flex;gap:15px;align-items:center;margin-bottom:22px}
+  .mark{display:grid;place-items:center;width:68px;height:68px;border-radius:18px;background:#fff;color:var(--azul);font-size:25px;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+  .eyebrow{margin:0 0 5px;font-size:12px;font-weight:800;letter-spacing:.08em}
+  h1{max-width:850px;margin:0;font-size:clamp(28px,4vw,44px);line-height:1.1}
+  .hero p:last-child{max-width:860px;margin:14px 0 0;color:#eaf4fb}
+  .cutoff{display:inline-block;margin-top:18px;padding:8px 12px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.11);font-size:13px;font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
+  .card{background:#fff;border:1px solid var(--borde);border-radius:16px;padding:18px;box-shadow:0 9px 24px rgba(27,57,80,.07)}
+  .card span{display:block;color:var(--muted);font-size:12px;font-weight:700}
+  .card strong{display:block;margin:7px 0 4px;color:var(--azul);font-size:clamp(22px,3vw,31px);line-height:1.1}
+  .card small{color:var(--muted)}
+  .card--main{border-top:5px solid var(--dorado)}
+  .card--green{border-top:5px solid var(--verde)}
+  .layout{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.5fr);gap:16px}
+  .panel{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;box-shadow:0 9px 24px rgba(27,57,80,.07)}
+  .panel h2{margin:0 0 5px;color:var(--azul);font-size:22px}
+  .panel .intro{margin:0 0 18px;color:var(--muted);font-size:14px}
+  .donut-wrap{display:grid;place-items:center;padding:12px 0 4px}
+  .donut{width:250px;height:250px;position:relative}
+  .donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+  .donut circle{fill:none;stroke-width:18}
+  .donut .track{stroke:#e4edf3}
+  .donut .value{stroke:var(--dorado);stroke-linecap:round;stroke-dasharray:0.096252 100}
+  .donut-label{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+  .donut-label strong{font-size:42px;line-height:1;color:var(--azul)}
+  .donut-label span{max-width:150px;color:var(--muted);font-size:12px}
+  .formula{margin-top:18px;padding:14px;border-radius:12px;background:var(--suave);border:1px solid var(--borde);font-size:13px}
+  .formula code{display:block;margin-top:6px;color:var(--azul);font-family:Consolas,monospace;font-weight:700;overflow-wrap:anywhere}
+  .bar-row{display:grid;grid-template-columns:130px 1fr 72px;gap:10px;align-items:center;margin:15px 0}
+  .bar-row label{font-size:13px;font-weight:700}
+  .bar{height:13px;background:#e6edf2;border-radius:999px;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--azul2),var(--verde))}
+  .bar-row output{font-size:13px;text-align:right;font-weight:800;color:var(--azul)}
+  .note{margin-top:18px;padding:15px 16px;border-left:5px solid var(--dorado);background:#fff9e8;border-radius:10px;font-size:13px}
+  .note strong{color:var(--azul)}
+  .table-panel{margin-top:16px}
+  .scroll{overflow-x:auto;border:1px solid var(--borde);border-radius:12px}
+  table{width:100%;border-collapse:collapse;min-width:900px;background:#fff}
+  th,td{padding:12px 13px;border-bottom:1px solid #e4ebf0;text-align:left;font-size:12px;vertical-align:top}
+  th{background:var(--azul);color:#fff;position:sticky;top:0}
+  tr:last-child td{border-bottom:0}
+  .money{white-space:nowrap;font-weight:700}
+  .status{display:inline-block;padding:5px 9px;border-radius:999px;background:#eaf4ee;color:var(--verde);font-weight:800}
+  .status--zero{background:#f4eded;color:var(--rojo)}
+  .method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+  .method article{padding:16px;border:1px solid var(--borde);border-radius:13px;background:var(--suave)}
+  .method strong{display:block;color:var(--azul);margin-bottom:5px}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .btn{border:0;border-radius:9px;padding:11px 15px;cursor:pointer;font-weight:800;text-decoration:none}
+  .btn--primary{background:var(--azul);color:#fff}
+  .btn--secondary{background:#e5edf3;color:var(--azul)}
+  footer{padding:22px 5px;text-align:center;color:var(--muted);font-size:12px}
+  @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}.layout{grid-template-columns:1fr}.method{grid-template-columns:1fr}}
+  @media(max-width:600px){.cards{grid-template-columns:1fr}.hero{padding:24px}.bar-row{grid-template-columns:105px 1fr 58px}}
+  @media print{
+    body{background:#fff}.wrap{width:100%;margin:0}.hero,.card,.panel{box-shadow:none}.actions{display:none}
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">SP</div>
+      <div>
+        <p class="eyebrow">ALCALDÍA MUNICIPAL DE SAN PEDRO · VALLE DEL CAUCA</p>
+        <strong>Menú Participa · Planeación y presupuesto participativo</strong>
+      </div>
+    </div>
+    <h1>Porcentaje del presupuesto para el proceso de participación ciudadana</h1>
+    <p>
+      Información presupuestal del rubro identificado directamente como
+      <strong>“Servicio de promoción a la participación ciudadana”</strong>,
+      comparado con el presupuesto definitivo municipal.
+    </p>
+    <span class="cutoff">Vigencia 2026 · Corte al 31 de marzo de 2026</span>
+  </section>
+
+  <section class="cards" aria-label="Indicadores principales">
+    <article class="card">
+      <span>Presupuesto definitivo municipal</span>
+      <strong>$31,301,037,487</strong>
+      <small>Base total del cálculo</small>
+    </article>
+    <article class="card card--main">
+      <span>Presupuesto directo para participación</span>
+      <strong>$30,127,937</strong>
+      <small>Rubro 4502001</small>
+    </article>
+    <article class="card card--main">
+      <span>Porcentaje del presupuesto</span>
+      <strong>0.0963%</strong>
+      <small>Equivale aproximadamente a 0,10%</small>
+    </article>
+    <article class="card card--green">
+      <span>Ejecución por compromisos</span>
+      <strong>91.87%</strong>
+      <small>$27,679,937 comprometidos</small>
+    </article>
+  </section>
+
+  <section class="layout">
+    <article class="panel">
+      <h2>Participación dentro del presupuesto municipal</h2>
+      <p class="intro">La gráfica muestra qué proporción representa el rubro directo frente al presupuesto definitivo total.</p>
+      <div class="donut-wrap">
+        <div class="donut" role="img" aria-label="El presupuesto directo de participación ciudadana representa 0.0963 por ciento del presupuesto definitivo municipal">
+          <svg viewBox="0 0 42 42" aria-hidden="true">
+            <circle class="track" cx="21" cy="21" r="15.9155"></circle>
+            <circle class="value" cx="21" cy="21" r="15.9155" pathLength="100"></circle>
+          </svg>
+          <div class="donut-label">
+            <strong>0.0963%</strong>
+            <span>del presupuesto definitivo municipal</span>
+          </div>
+        </div>
+      </div>
+      <div class="formula">
+        <strong>Fórmula aplicada</strong>
+        <code>($ 30,127,937 ÷ $ 31,301,037,487) × 100 = 0.0963%</code>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h2>Ejecución del rubro de participación</h2>
+      <p class="intro">Estado presupuestal del servicio de promoción a la participación ciudadana.</p>
+
+      <div class="bar-row">
+        <label>Certificados</label>
+        <div class="bar"><i style="width:100.00%"></i></div>
+        <output>100.00%</output>
+      </div>
+      <div class="bar-row">
+        <label>Comprometido</label>
+        <div class="bar"><i style="width:91.87%"></i></div>
+        <output>91.87%</output>
+      </div>
+      <div class="bar-row">
+        <label>Obligaciones</label>
+        <div class="bar"><i style="width:0.00%"></i></div>
+        <output>0.00%</output>
+      </div>
+      <div class="bar-row">
+        <label>Pagos</label>
+        <div class="bar"><i style="width:0.00%"></i></div>
+        <output>0.00%</output>
+      </div>
+
+      <div class="note">
+        <strong>Lectura ciudadana:</strong> al corte, el rubro tiene el 100% certificado y el
+        91.87% comprometido. No registra obligaciones ni pagos en el reporte del primer trimestre.
+        Esto no significa que el proceso no exista; significa que al 31 de marzo aún no se habían causado ni desembolsado esos recursos.
+      </div>
+    </article>
+  </section>
+
+  <section class="panel table-panel">
+    <h2>Detalle presupuestal publicado</h2>
+    <p class="intro">Valores tomados del detalle de gastos de la ejecución presupuestal 2026.</p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Rubro</th><th>Descripción</th><th>Definitivo</th><th>Certificados</th>
+            <th>Comprometido</th><th>Obligaciones</th><th>Pagos</th><th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2.3.2.02.02-.0064502001</td>
+            <td>Servicio de promoción a la participación ciudadana<br><small>Sector 45 · Programa 4502 · Producto 4502001</small></td>
+            <td class="money">$30,127,937</td>
+            <td class="money">$30,127,937</td>
+            <td class="money">$27,679,937</td>
+            <td class="money">$0</td>
+            <td class="money">$0</td>
+            <td><span class="status">En desarrollo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="method">
+      <article>
+        <strong>Numerador</strong>
+        Presupuesto definitivo del rubro directamente denominado “Servicio de promoción a la participación ciudadana”.
+      </article>
+      <article>
+        <strong>Denominador</strong>
+        Presupuesto definitivo total del Municipio de San Pedro para la vigencia 2026.
+      </article>
+      <article>
+        <strong>Alcance</strong>
+        El indicador informa recursos asignados al proceso de promoción de la participación. No afirma que la ciudadanía haya decidido directamente la destinación del rubro.
+      </article>
+    </div>
+
+    <div class="note">
+      <strong>Transparencia metodológica:</strong> no se sumaron otros programas de convivencia,
+      asistencia institucional o atención social, porque no están denominados de manera directa y exclusiva
+      como promoción de la participación ciudadana. Así se evita inflar artificialmente el porcentaje.
+    </div>
+
+    <div class="actions">
+      <button class="btn btn--primary" type="button" onclick="window.print()">Imprimir o guardar en PDF</button>
+      <button class="btn btn--secondary" type="button" onclick="descargarCSV()">Descargar datos CSV</button>
+    </div>
+  </section>
+
+  <footer>
+    Fuente: Ejecución presupuestal de ingresos y gastos 2026, corte al 31 de marzo de 2026,
+    Secretaría de Hacienda Municipal. Documento de apoyo: Ejecucion_Presupuestal_2026_San_Pedro_ITA.xlsx.
+  </footer>
+</main>
+
+<script>
+const datos = {"entidad": "Alcaldía Municipal de San Pedro, Valle del Cauca", "vigencia": 2026, "fechaCorte": "2026-03-31", "presupuestoDefinitivoMunicipal": 31301037487, "presupuestoParticipacion": 30127937, "porcentajePresupuestoParticipacion": 0.096252, "rubro": "2.3.2.02.02-.0064502001", "descripcion": "Servicio de promoción a la participación ciudadana", "codigoSector": "45", "codigoPrograma": "4502", "codigoProducto": "4502001", "certificados": 30127937, "comprometido": 27679937, "obligaciones": 0, "pagos": 0, "certificadoSinCompromiso": 2448000, "fuente": "Ejecucion_Presupuestal_2026_San_Pedro_ITA.xlsx - GASTOS_DETALLE"};
+
+function descargarCSV(){
+  const filas = [
+    ["Campo","Valor"],
+    ["Entidad",datos.entidad],
+    ["Vigencia",datos.vigencia],
+    ["Fecha de corte",datos.fechaCorte],
+    ["Presupuesto definitivo municipal",datos.presupuestoDefinitivoMunicipal],
+    ["Presupuesto participación",datos.presupuestoParticipacion],
+    ["Porcentaje presupuesto participación",datos.porcentajePresupuestoParticipacion],
+    ["Rubro",datos.rubro],
+    ["Descripción",datos.descripcion],
+    ["Certificados",datos.certificados],
+    ["Comprometido",datos.comprometido],
+    ["Obligaciones",datos.obligaciones],
+    ["Pagos",datos.pagos],
+    ["Fuente",datos.fuente]
+  ];
+  const csv = "\uFEFF" + filas.map(f => f.map(v => `"${String(v).replaceAll('"','""')}"`).join(";")).join("\n");
+  const blob = new Blob([csv],{type:"text/csv;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href=url;
+  a.download="porcentaje_presupuesto_participacion_2026.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
